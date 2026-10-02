@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Iqra Api 🤍</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="sky" aria-hidden="true"></div>
+<div id="bar" aria-hidden="true"></div>
+
+<!-- 1. LOADER -->
+<div id="loader" role="status">
+  <svg class="env" viewBox="0 0 80 60" aria-hidden="true"><rect x="4" y="8" width="72" height="46" rx="6" fill="#fff7ee" stroke="#d99aa5" stroke-width="2"/><path d="M4 12l36 24 36-24" fill="none" stroke="#d99aa5" stroke-width="2"/><path d="M40 30c-6-7-14 1-6 7l6 5 6-5c8-6 0-14-6-7z" fill="#e9889a"/></svg>
+  <p class="l1">Preparing something special for Iqra Api…</p>
+  <div class="track"><i></i></div>
+  <p class="l2">One little surprise.<br>One beautiful journey.<br>One very special Api.</p>
+  <button class="ghost" id="skip">Skip</button>
+</div>
+
+<!-- 2. GIFT -->
+<section id="giftScreen" hidden>
+  <p class="hand">Iqra Api, there's a little gift waiting for you…</p>
+  <button id="gift" class="gift" aria-label="Open my gift">
+    <svg viewBox="0 0 240 240" aria-hidden="true">
+      <defs><radialGradient id="gl"><stop offset="0" stop-color="#fff3b0"/><stop offset="1" stop-color="#fff3b000"/></radialGradient>
+      <linearGradient id="bx" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f2a9b8"/><stop offset="1" stop-color="#c9a0dc"/></linearGradient></defs>
+      <circle class="glow" cx="120" cy="120" r="110" fill="url(#gl)"/>
+      <rect x="40" y="110" width="160" height="110" rx="12" fill="url(#bx)"/>
+      <rect x="108" y="110" width="24" height="110" fill="#fff3d6"/>
+      <g class="lid"><rect x="30" y="80" width="180" height="40" rx="10" fill="#e68aa0"/><rect x="108" y="80" width="24" height="40" fill="#fff3d6"/>
+        <g class="bow"><path d="M120 80c-30-40-62-10-30 4zM120 80c30-40 62-10 30 4z" fill="#fff3d6" stroke="#c9a45c" stroke-width="2"/><circle cx="120" cy="80" r="7" fill="#c9a45c"/></g></g>
+    </svg>
+  </button>
+  <p>You have to open it yourself. 🎁</p>
+  <button class="btn" id="openGift">Open My Gift</button>
+</section>
+
+<!-- NAV -->
+<nav id="nav" hidden aria-label="Sections">
+  <button id="menu" aria-expanded="false" aria-label="Menu">☰</button>
+  <ul>
+    <li><a href="#home">Home</a></li><li><a href="#story">Our Story</a></li><li><a href="#admire">What I Admire</a></li>
+    <li><a href="#memories">Memories</a></li><li><a href="#letter">Letter</a></li><li><a href="#duas">Duas</a></li><li><a href="#wish">Final Wish</a></li>
+  </ul>
+</nav>
+<button id="music" class="music" hidden aria-pressed="false" aria-label="Toggle music">♪</button>
+<audio id="audio" src="assets/music.mp3" loop preload="none"></audio>
+
+<main id="main" hidden>
+<!-- 3. HERO -->
+<section id="home" class="hero">
+  <span class="float f1">✦</span><span class="float f2">❀</span><span class="float f3">♡</span><span class="float f4">📖</span><span class="float f5">☕</span><span class="float f6">✏️</span>
+  <p class="hand">A little website for someone who became family</p>
+  <h1>Happy Birthday,<br><span id="nameHover">Iqra Api!</span> ❤️</h1>
+  <p class="lead">To the woman who somehow came into my life as a colleague… and slowly became family.</p>
+  <div class="row"><a class="btn" href="#story">Our Story →</a><a class="btn soft" href="#letter">Read My Message ↓</a></div>
+</section>
+
+<!-- 4. STORY -->
+<section id="story" class="sec">
+  <h2 class="rv">How it all started</h2>
+  <div class="prose rv">
+    <p>Almost 14 months ago, I joined The Educators as a teacher.</p>
+    <p>You were already there.</p>
+    <p>I didn't know the person I was simply meeting as a colleague would become someone I'd call “Api” with my whole heart.</p>
+  </div>
+  <ol class="steps" id="steps"></ol>
+  <p class="big rv">We became Bhai-Bhehen.</p>
+</section>
+
+<!-- 5. LEARNED -->
+<section id="admire" class="sec wide">
+  <h2 class="rv">Things I learned from my Api</h2>
+  <div class="grid" id="cards"></div>
+</section>
+
+<!-- 6. WHY I ADMIRE -->
+<section class="sec statement">
+  <p class="rv">Iqra Api, there are people we meet in life…</p>
+  <p class="rv">And then there are people who slowly become a part of our story.</p>
+  <p class="rv em">You became that person for me.</p>
+  <p class="rv">I admire you not because life has always been easy for you, but because even when it brings responsibilities, pressure and hurdles, you keep standing.</p>
+  <p class="rv">You work for yourself. You support your family and your sisters. You handle responsibility, guide others, stay professional, and keep growing.</p>
+  <p class="big rv">You are doing much more than you probably realize.</p>
+  <p class="rv">And I hope one day you look back and see how much you accomplished.</p>
+</section>
+
+<!-- 7. TIMELINE -->
+<section id="memories" class="sec">
+  <h2 class="rv">From Coworkers to Bhai-Bhehen</h2>
+  <ol class="tl" id="tl"></ol>
+  <p class="quote rv">The place changed. The routine changed.<br>But the respect, affection, and memories remained.</p>
+</section>
+
+<!-- 8. MISS -->
+<section class="sec statement dim">
+  <h2 class="rv">The part of The Educators I miss most</h2>
+  <p class="rv">I miss the environment.</p><p class="rv">I miss the routine.</p><p class="rv">I miss the people.</p><p class="rv">I miss the days.</p>
+  <p class="big rv">But if I'm being completely honest…</p>
+  <p class="rv em">The one person I miss the most from The Educators is you, Iqra Api.</p>
+  <p class="rv">Because somewhere during those ordinary working days, you became more than a colleague to me.</p>
+  <p class="big rv">You became my Api.</p>
+</section>
+
+<!-- 9. REPORT -->
+<section class="sec">
+  <h2 class="rv">Official Api Appreciation Report</h2>
+  <div class="report rv" id="report"></div>
+</section>
+
+<!-- 10. LETTER -->
+<section id="letter" class="sec">
+  <h2 class="rv">A Letter From Your Bhai</h2>
+  <article class="paper rv" id="paper">
+    <!-- OPTIONAL PHOTO HERE: <img src="assets/us.jpg" alt="Iqra Api and me"> -->
+    <p>Dear Iqra Api,</p>
+    <p>Happy Birthday.</p>
+    <p>I don't know if a website can really explain what someone means to you, but I wanted to try.</p>
+    <p>Almost 14 months ago, when I joined The Educators, I never imagined I'd meet someone there who would become like an elder sister to me. At first you were just someone I worked with. Then, slowly, things changed. You guided me when I needed guidance. You shared your experience. You inspired me with the way you carried your work and your responsibilities.</p>
+    <p>And somewhere between all those ordinary days, jokes, problems and little memories, something beautiful happened. We became Bhai-Bhehen.</p>
+    <p>You may not realize how much I admire you. Your consistency. Your maturity. The way you handle responsibility. How much you do for yourself and your family, for your sisters. You keep going. You guide people. And somehow you still stay kind, cute, innocent, and yourself. That combination is rare.</p>
+    <p>I'm no longer at The Educators, but I still remember those days. There are many things I miss about that place, but the person I miss most is my Api. Not because we worked together. Because you became family.</p>
+    <p>You made difficult days feel lighter. You gave me the feeling that there was someone I could look up to. I will always be grateful for that.</p>
+    <p>On your birthday I don't just want to say Happy Birthday. I want to pray for you.</p>
+    <p>May Allah keep you happy. May He protect your heart from unnecessary pain and make every difficult thing easier. May He open doors you never expected, and bless your work, your family and your future. May He give you peace where you need peace, strength where you need strength, and happiness where you deserve it.</p>
+    <p>And when the right time comes, may Allah bless you with a husband who is caring, respectful, understanding, supportive, and perfectly suited for you. Don't rush what Allah has written for you. Trust His timing. It is always better than ours.</p>
+    <p>So keep going. Keep believing. You are already giving 100% to yourself and your family, and I hope you never underestimate that. I know some days are heavier than others. But remember: you have already survived days you once thought were impossible. You will get through the next ones too, InshaAllah.</p>
+    <p>I hope one day you realize that all the effort you are putting in today was building the life you were praying for.</p>
+    <p>Thank you for being my Api. Thank you for guiding me, inspiring me, and being there. And thank you for becoming family without needing a blood relationship to define it.</p>
+    <p>Happy Birthday, Iqra Api. May Allah bless you with a long, beautiful, peaceful and deeply happy life.</p>
+    <p class="sign">Your Bhai ❤️</p>
+  </article>
+</section>
+
+<!-- 11. DUAS -->
+<section id="duas" class="sec wide duas">
+  <span class="moon" aria-hidden="true">☾</span>
+  <h2 class="rv">Some Duas for My Api</h2>
+  <div class="grid" id="duaList"></div>
+  <button class="amen rv" id="amen">Ameen, Ya Rabb. 🤍</button>
+</section>
+
+<!-- 12. MOTIVATION -->
+<section class="sec statement">
+  <h2 class="rv">For the days you doubt yourself</h2>
+  <p class="rv">Don't forget how far you've already come.</p>
+  <p class="rv">You are doing more than you think.</p>
+  <p class="rv">Your effort, your consistency, your sacrifices matter.</p>
+  <p class="rv">Your family sees your effort. The people you have helped remember your kindness.</p>
+  <p class="rv em">And your Bhai remembers too.</p>
+  <p class="rv">Keep going, Api.</p>
+  <p class="big rv">Your story is still being written.</p>
+  <p class="rv">And InshaAllah, the best chapters are still ahead.</p>
+</section>
+
+<!-- 13. HEART -->
+<section class="sec center">
+  <p class="hand rv">Tap the heart to see why your Bhai is grateful.</p>
+  <button id="heart" class="heart" aria-label="Reveal a reason to be grateful">♥</button>
+  <p id="thanks" class="thanks" aria-live="polite">&nbsp;</p>
+</section>
+
+<!-- 14. CAKE -->
+<section id="wish" class="sec center">
+  <h2 class="rv">Make a wish for yourself, Api.</h2>
+  <div class="cake" id="cake">
+    <div class="candles">
+      <button class="candle" aria-label="Blow out candle"><i class="fl"></i></button>
+      <button class="candle" aria-label="Blow out candle"><i class="fl"></i></button>
+      <button class="candle" aria-label="Blow out candle"><i class="fl"></i></button>
+    </div>
+    <div class="tier t2"></div><div class="tier t1"></div><div class="plate"></div>
+  </div>
+  <p id="wishText" class="wishText" aria-live="polite">Tap the candles.</p>
+</section>
+
+<!-- 15. FINAL -->
+<section id="final" class="sec statement final">
+  <h2 class="rv">One last thing, Iqra Api…</h2>
+  <p class="rv">Life doesn't always give us family through blood.</p>
+  <p class="rv">Sometimes it gives us people… and over time, those people become family.</p>
+  <p class="rv">That is what happened with us. You became my Api.</p>
+  <p class="rv">And I will always be grateful for that.</p>
+  <p class="big rv">Happy Birthday, Iqra Api ❤️</p>
+  <p class="rv">From your Bhai.</p>
+  <p class="sign rv">— Your Bhai</p>
+  <button class="btn rv" id="surprise">There is one more little surprise…</button>
+</section>
+
+<footer>
+  <p>Made with code, memories, duas, and a lot of love from your Bhai.</p>
+  <p>Happy Birthday, Iqra Api <button id="egg" class="egg" aria-label="A tiny secret">🤍</button> <span id="year"></span></p>
+  <p id="eggMsg" class="eggMsg" aria-live="polite"></p>
+</footer>
+</main>
+
+<!-- FINAL SURPRISE -->
+<div id="party" hidden role="dialog" aria-label="Birthday surprise">
+  <h2>Happy Birthday, Iqra Api! 🎂❤️</h2>
+  <p>May this year be kinder to you, brighter for you, and filled with everything your heart deserves.</p>
+  <p class="hand">Allah bless you always. Ameen. 🤍</p>
+  <button class="btn" id="closeParty">Close</button>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
